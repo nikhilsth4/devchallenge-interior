@@ -1,0 +1,304 @@
+:root {
+  --black: #181719;
+  --gray: #828282;
+  --white: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.material-symbols-rounded {
+  color: var(--white);
+}
+
+.header {
+  height: 7rem;
+  padding: 1.8rem 1.2rem;
+}
+
+.header.expanded {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav .nav__logo {
+  border: 1px solid var(--white);
+  padding: 0.8rem;
+}
+
+.nav__logo h3 {
+  font-family: "Crimson Pro";
+  font-weight: 200;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+}
+
+.nav .menu,
+.nav .close {
+  cursor: pointer;
+}
+
+.nav__links li a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+nav li a:before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: var(--white);
+  position: absolute;
+  bottom: -8px;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+nav li a:after {
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  position: absolute;
+  bottom: -7px;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+nav li a:hover:before,
+nav li a:hover:after {
+  opacity: 1;
+}
+
+.nav__container {
+  display: none;
+}
+
+.expanded .nav__container {
+  display: block;
+  position: absolute;
+  background: var(--black);
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.expanded .nav__links {
+  margin-top: 21rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 3.2rem;
+}
+
+.expanded .nav__container > span {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.8rem;
+  padding-right: 1.2rem;
+}
+
+.hero {
+  margin: 2rem 1.2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+}
+
+.hero__desc h1 {
+  font-family: "Lora";
+  font-weight: 500;
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.hero__desc p {
+  font-weight: 400;
+  line-height: 1.7rem;
+  margin-bottom: 2.4rem;
+}
+
+.hero__desc a {
+  font-weight: 700;
+  line-height: 1.7rem;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.hero__image {
+  position: relative;
+}
+
+.hero__image .card {
+  position: absolute;
+  bottom: -72px;
+  right: 12px;
+  padding: 1.2rem 2.4rem 2.4rem;
+  background: var(--black);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 30rem;
+  height: 13.8rem;
+}
+
+.card .card__header {
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card__header img {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
+}
+
+.card__header .card__user h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.card__user h4 {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: var(--gray);
+}
+
+.card__body h2 {
+  font-family: "Lora";
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  margin-top: 1rem;
+}
+
+footer {
+  margin-top: 14rem;
+  margin-bottom: 2.4rem;
+}
+
+footer h6 {
+  color: var(--gray);
+  font-weight: 500;
+  line-height: 1.7rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    height: 11.6rem;
+    padding: 4.2rem 7.7rem;
+  }
+
+  .header .nav {
+    max-width: 144rem;
+  }
+  .menu {
+    display: none;
+  }
+  .nav__container > span {
+    display: none;
+  }
+
+  .nav__container {
+    display: block;
+  }
+
+  .nav__container .nav__links {
+    display: flex;
+    flex-direction: row;
+    gap: 8.6rem;
+  }
+
+  .hero {
+    margin: 9.2rem 7.7rem 12rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 16.6rem;
+  }
+
+  .hero__desc h1 {
+    font-size: 4.8rem;
+    line-height: 6.1rem;
+  }
+
+  .hero__desc p {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+
+  .hero__desc a {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
